@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My AI Dashboard | Royal Brothers Fitness Gym</title>
+    <meta
+      name="description"
+      content="Your Royal Brothers Fitness Gym AI fitness overview in one place."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="index.html" class="logo">
+          <span class="logo-text"
+            >ROYAL<span class="logo-accent">BROTHERS</span></span
+          >
+          <span class="logo-sub">FITNESS GYM</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="membership.html" class="nav-link">Membership</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="logoutBtn" class="btn btn-outline">Logout</button>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="profile-page">
+      <div class="container">
+        <h1 class="section-title-sm dash-title">My AI Fitness Dashboard</h1>
+        <p id="dashStatus" class="profile-status">Loading your dashboard...</p>
+        <div id="dashLoggedOut" class="profile-status" style="display: none">
+          You're not logged in.
+          <a href="login.html" class="auth-link">Log in</a> to view your
+          dashboard.
+        </div>
+
+        <div id="dashContent" class="dash-grid" style="display: none"></div>
+
+        <p class="plan-disclaimer" id="dashDisclaimer" style="display: none">
+          This overview only summarises what you have already saved. AI content
+          is general fitness guidance, not medical advice.
+        </p>
+      </div>
+    </main>
+
+    <script src="auth-cache.js"></script>
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

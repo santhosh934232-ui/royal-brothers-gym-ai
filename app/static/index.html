@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal Brothers Fitness Gym | Belur Main Road</title>
+    <meta
+      name="description"
+      content="Royal Brothers Fitness Gym - Belur Main Road, Koottathupatti. Weight Gain, Weight Loss, Strength Training, Cardio, Body Building, Muscle Gain & Body Toning."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon (add a favicon.png to this folder later, then uncomment) -->
+    <!-- <link rel="icon" type="image/png" href="favicon.png" /> -->
+  </head>
+  <body>
+    <!-- ============ PRELOADER ============ -->
+    <div class="preloader" id="preloader">
+      <div class="loader-spinner"></div>
+    </div>
+
+    <!-- ============ HEADER / NAVBAR ============ -->
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="index.html" class="logo">
+          <span class="logo-text"
+            >ROYAL<span class="logo-accent">BROTHERS</span></span
+          >
+          <span class="logo-sub">FITNESS GYM</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="membership.html" class="nav-link">Membership</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-neon">Join Now</a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-text">
+          <span class="hero-tag"
+            >💪 ROYAL BROTHERS FITNESS GYM — BELUR MAIN ROAD,
+            KOOTTATHUPATTI</span
+          >
+          <h1 class="hero-title">
+            BUILD YOUR <span class="text-neon-blue">STRENGTH</span><br />
+            TRANSFORM YOUR <span class="text-neon-purple">LIFE</span>
+          </h1>
+          <p class="hero-desc">
+            Welcome to <strong>Royal Brothers Fitness Gym</strong> — your
+            ultimate destination for Weight Gain, Weight Loss, Strength
+            Training, Cardio, Body Building, Muscle Gain & Body Toning.
+          </p>
+          <div class="hero-buttons">
+            <a href="register.html" class="btn btn-neon-lg">Join Now</a>
+            <a href="membership.html" class="btn btn-outline-lg">View Plans</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-box">
+              <h3 class="counter" data-target="500">0</h3>
+              <p>Members</p>
+            </div>
+            <div class="stat-box">
+              <h3 class="counter" data-target="4">0</h3>
+              <p>Trainer</p>
+            </div>
+            <div class="stat-box">
+              <h3 class="counter" data-target="6">0</h3>
+              <p>Days Open</p>
+            </div>
+            <div class="stat-box">
+              <h3 id="membershipPlanCounter" class="counter" data-target="3">
+                0
+              </h3>
+              <p>Membership Plans</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="img.jpg"
+            alt="Royal Brothers Fitness Gym - Strength Training"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUICK INFO STRIP ============ -->
+    <section class="quick-info">
+      <div class="container quick-info-grid">
+        <div class="quick-info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <h4>Location</h4>
+            <p>Belur Main Road, Koottathupatti</p>
+          </div>
+        </div>
+        <div class="quick-info-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <h4>Call Us</h4>
+            <p>63807 78788 / 90805 48638</p>
+          </div>
+        </div>
+        <div class="quick-info-item">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <h4>Men's Timing</h4>
+            <p>5:00 AM–9:00 AM | 5:00 PM–9:00 PM</p>
+          </div>
+        </div>
+        <div class="quick-info-item">
+          <i class="fa-solid fa-venus"></i>
+          <div>
+            <h4>Women's Timing</h4>
+            <p>8:00 AM–10:00 AM | 4:00 PM–6:00 PM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT PREVIEW ============ -->
+    <section class="about-preview" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img src="about-gym.jpg" alt="Royal Brothers Fitness Gym Interior" />
+          <div class="about-image-badge">
+            <h3>10+</h3>
+            <p>Years of Excellence</p>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-tag">ABOUT US</span>
+          <h2 class="section-title">
+            Why Choose
+            <span class="text-neon-blue">Royal Brothers</span> Fitness Gym?
+          </h2>
+          <p>
+            At <strong>Royal Brothers Fitness Gym</strong>, we are committed to
+            helping you achieve your fitness goals with world-class equipment
+            and a supportive community. Whether you're aiming for weight loss,
+            muscle gain, or overall strength, we're here to guide you every step
+            of the way.
+          </p>
+          <ul class="about-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Modern Equipment & Clean
+              Facility
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Separate Timings for Men
+              & Women
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Personalized Diet &
+              Workout Plans
+            </li>
+          </ul>
+          <a href="about.html" class="btn btn-neon">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES SECTION ============ -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">WHAT WE OFFER</span>
+          <h2 class="section-title">
+            Our <span class="text-neon-purple">Services</span>
+          </h2>
+          <p class="section-desc">
+            Comprehensive fitness programs tailored to your goals
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-weight-scale"></i>
+            </div>
+            <h3>Weight Gain</h3>
+            <p>
+              Structured programs to help you build healthy mass and strength.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-fire"></i></div>
+            <h3>Weight Loss</h3>
+            <p>
+              Effective fat-burning routines combined with nutrition guidance.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-dumbbell"></i></div>
+            <h3>Strength Training</h3>
+            <p>
+              Build raw power with progressive resistance training programs.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h3>Cardio Training</h3>
+            <p>
+              Boost endurance and cardiovascular health with guided sessions.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-trophy"></i></div>
+            <h3>Body Building</h3>
+            <p>Competition-focused training for serious bodybuilders.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-hand-fist"></i>
+            </div>
+            <h3>Muscle Gain</h3>
+            <p>Targeted hypertrophy programs to build lean muscle mass.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-person-walking"></i>
+            </div>
+            <h3>Body Toning</h3>
+            <p>Sculpt and tone your body with functional training methods.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MEMBERSHIP PLANS PREVIEW (dynamically loaded from the database) ============ -->
+    <section class="membership-preview" id="membership">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">PRICING</span>
+          <h2 class="section-title">
+            Membership <span class="text-neon-blue">Plans</span>
+          </h2>
+          <p class="section-desc">
+            Choose a plan that fits your fitness journey
+          </p>
+        </div>
+
+        <div class="plans-grid" id="homePlansGrid">
+          <p class="plans-loading">Loading membership plans...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TIMING SECTION ============ -->
+    <section class="timing-section">
+      <div class="container timing-grid">
+        <div class="timing-card">
+          <div class="timing-icon"><i class="fa-solid fa-mars"></i></div>
+          <h3>Men's Timing</h3>
+          <div class="timing-row">
+            <span>Morning</span>
+            <span class="text-neon-blue">5:00 AM – 9:00 AM</span>
+          </div>
+          <div class="timing-row">
+            <span>Evening</span>
+            <span class="text-neon-blue">5:00 PM – 9:00 PM</span>
+          </div>
+        </div>
+        <div class="timing-card">
+          <div class="timing-icon"><i class="fa-solid fa-venus"></i></div>
+          <h3>Women's Timing</h3>
+          <div class="timing-row">
+            <span>Morning</span>
+            <span class="text-neon-purple">8:00 AM – 10:00 AM</span>
+          </div>
+          <div class="timing-row">
+            <span>Evening</span>
+            <span class="text-neon-purple">4:00 PM – 6:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CALL TO ACTION ============ -->
+    <section class="cta-section">
+      <div class="container cta-content text-center">
+        <h2>
+          Ready To Start Your
+          <span class="text-neon-blue">Fitness Journey?</span>
+        </h2>
+        <p>
+          Join <strong>Royal Brothers Fitness Gym</strong> today and take the
+          first step towards a stronger you.
+        </p>
+        <a href="register.html" class="btn btn-neon-lg">Join Now</a>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">GET IN TOUCH</span>
+          <h2 class="section-title">
+            Contact <span class="text-neon-blue">Us</span>
+          </h2>
+          <p class="section-desc">
+            Have questions? Reach out to Royal Brothers Fitness Gym anytime.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <h4>Address</h4>
+            <p>Belur Main Road, Koottathupatti</p>
+          </div>
+          <div class="contact-card">
+            <i class="fa-solid fa-phone"></i>
+            <h4>Phone</h4>
+            <p>63807 78788</p>
+            <p>90805 48638</p>
+          </div>
+          <div class="contact-card">
+            <i class="fa-solid fa-envelope"></i>
+            <h4>Email</h4>
+            <p>royalbrothersgym@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-logo">
+            ROYAL<span class="logo-accent">BROTHERS</span>
+          </h3>
+          <p>
+            Royal Brothers Fitness Gym — your ultimate destination for strength,
+            fitness, and transformation.
+          </p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="services.html">Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fa-solid fa-location-dot"></i> Belur Main Road,
+              Koottathupatti
+            </li>
+            <li><i class="fa-solid fa-phone"></i> 63807 78788</li>
+            <li><i class="fa-solid fa-phone"></i> 90805 48638</li>
+            <li>
+              <i class="fa-solid fa-envelope"></i> royalbrothersgym@gmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="year"></span> Royal Brothers Fitness Gym. All Rights
+          Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="auth-cache.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify Email | Royal Brothers Fitness Gym</title>
+    <meta
+      name="description"
+      content="Verify your email address for your Royal Brothers Fitness Gym account."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Main site stylesheet (shared variables, colors, buttons) -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Login page stylesheet (reused so this page matches the login look) -->
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="auth-page">
+      <!-- ============ LEFT BRAND PANEL ============ -->
+      <div class="auth-brand">
+        <a href="index.html" class="logo auth-logo">
+          <span class="logo-text"
+            >ROYAL<span class="logo-accent">BROTHERS</span></span
+          >
+          <span class="logo-sub">FITNESS GYM</span>
+        </a>
+
+        <div class="auth-brand-content">
+          <h1 class="auth-brand-title">
+            VERIFY YOUR <span class="text-neon-blue">EMAIL</span>
+          </h1>
+          <p class="auth-brand-desc">
+            One last step before you can log in to your Royal Brothers Fitness
+            Gym account.
+          </p>
+
+          <ul class="auth-brand-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Belur Main Road,
+              Koottathupatti
+            </li>
+            <li><i class="fa-solid fa-circle-check"></i> Open 6 Days a Week</li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Separate Men's & Women's
+              Timings
+            </li>
+          </ul>
+        </div>
+
+        <a href="index.html" class="auth-back-link">
+          <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
+
+      <!-- ============ RIGHT VERIFICATION STATUS PANEL ============ -->
+      <div class="auth-form-panel">
+        <div class="auth-card">
+          <span class="section-tag">EMAIL VERIFICATION</span>
+          <h2 class="auth-title" id="verifyTitle">Verifying your email...</h2>
+          <p class="auth-subtitle" id="verifySubtitle">Please wait a moment.</p>
+
+          <div id="verifyIcon" class="verify-status-icon">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+          </div>
+
+          <p class="form-error" id="formError" role="alert"></p>
+
+          <!-- Shown only if the token is invalid/expired -->
+          <div id="resendSection" class="resend-section" style="display: none">
+            <p class="auth-footer-text">Enter your email to get a new link:</p>
+            <div class="form-group">
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+                <input
+                  type="email"
+                  id="resendEmail"
+                  name="resendEmail"
+                  placeholder="Enter your email address"
+                  autocomplete="username"
+                />
+              </div>
+            </div>
+            <button
+              type="button"
+              id="resendBtn"
+              class="btn btn-neon-lg auth-submit"
+            >
+              Resend Verification Email
+            </button>
+          </div>
+
+          <div class="auth-divider"><span>OR</span></div>
+
+          <p class="auth-footer-text">
+            <a href="login.html" class="auth-link">Back to Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="verify-email.js"></script>
+  </body>
+</html>

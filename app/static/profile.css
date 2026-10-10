@@ -1,0 +1,471 @@
+/* ============================================
+   ROYAL BROTHERS FITNESS GYM - PROFILE PAGE
+   Dashboard-style layout: profile card + membership card
+   ============================================ */
+
+.profile-page {
+  padding: 140px 0 100px;
+  min-height: 100vh;
+}
+
+.profile-status {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  padding: 60px 0;
+}
+
+.auth-link {
+  color: var(--color-neon-blue);
+  font-weight: 600;
+}
+
+/* ---------- EXPIRY WARNING BANNER ---------- */
+.expiry-warning {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(250, 204, 21, 0.1);
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  color: #facc15;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.expiry-warning i {
+  font-size: 1.1rem;
+}
+
+/* ---------- DASHBOARD GRID ---------- */
+.profile-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .profile-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- PROFILE HEADER CARD ---------- */
+.profile-header-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+}
+
+.profile-avatar-wrap {
+  position: relative;
+  width: 96px;
+  margin: 0 auto 20px;
+}
+
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--gradient-blue-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  color: #fff;
+  overflow: hidden;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-text-primary);
+  letter-spacing: 1px;
+}
+
+.profile-email {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  margin: 6px 0 12px;
+}
+
+.profile-badge {
+  display: inline-block;
+  background: var(--color-bg-card-hover);
+  border: 1px solid var(--color-border);
+  color: var(--color-neon-blue);
+  padding: 4px 16px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-edit-toggle {
+  margin-top: 6px;
+}
+
+/* ---------- EDIT PROFILE FORM ---------- */
+.profile-edit-form {
+  text-align: left;
+  margin-top: 8px;
+}
+
+.profile-edit-form .form-group {
+  margin-bottom: 18px;
+}
+
+.profile-edit-form label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.profile-edit-form input,
+.profile-edit-form select {
+  width: 100%;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+}
+
+.profile-edit-form input:focus,
+.profile-edit-form select:focus {
+  outline: none;
+  border-color: var(--color-neon-blue);
+}
+
+.profile-edit-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.profile-edit-actions .btn {
+  flex: 1;
+  text-align: center;
+}
+
+.form-error {
+  display: none;
+  font-size: 0.85rem;
+  color: #ff5c7a;
+  background: rgba(255, 92, 122, 0.1);
+  border: 1px solid rgba(255, 92, 122, 0.3);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+.form-error.show {
+  display: block;
+}
+
+/* ---------- MEMBERSHIP CARD SECTION ---------- */
+.section-title-sm {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.membership-card {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 217, 255, 0.08) 0%,
+    var(--color-bg-card) 60%
+  );
+  border: 1px solid var(--color-neon-blue);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.1);
+}
+
+.membership-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.membership-card-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-text-primary);
+  letter-spacing: 1px;
+}
+
+.membership-card-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.membership-card-row:last-child {
+  border-bottom: none;
+}
+
+.membership-card-row span:first-child {
+  color: var(--color-text-muted);
+}
+
+.membership-card-row span:last-child {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.membership-card-empty {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.membership-card-empty a {
+  color: var(--color-neon-blue);
+  font-weight: 600;
+}
+
+/* ---------- STATUS BADGES (reused pattern) ---------- */
+.status-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.status-badge.pending {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+}
+
+.status-badge.active {
+  background: rgba(0, 217, 255, 0.15);
+  color: var(--color-neon-blue);
+}
+
+.status-badge.rejected {
+  background: rgba(255, 92, 122, 0.15);
+  color: #ff5c7a;
+}
+
+/* ---------- BOTTOM LOGOUT SECTION ---------- */
+.profile-logout-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.btn-logout-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 40px;
+  background: rgba(255, 92, 122, 0.1);
+  border: 1px solid #ff5c7a;
+  color: #ff5c7a;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+  max-width: 320px;
+}
+
+.btn-logout-danger i {
+  font-size: 1rem;
+}
+
+.btn-logout-danger:hover {
+  background: #ff5c7a;
+  color: #0a0a0a;
+  box-shadow: 0 0 30px rgba(255, 92, 122, 0.3);
+}
+
+.btn-logout-danger:active {
+  transform: scale(0.98);
+}
+
+/* ---------- TOAST (reused pattern) ---------- */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-neon-blue);
+  color: var(--color-text-primary);
+  padding: 16px 28px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 3000;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.error {
+  border-color: #ff5c7a;
+  box-shadow: 0 0 30px rgba(255, 92, 122, 0.2);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .profile-header-card {
+    padding: 28px 22px;
+  }
+
+  .btn-logout-danger {
+    max-width: 100%;
+  }
+}
+
+/* ---------- FITNESS PROFILE (Step 2) ---------- */
+.fitness-section {
+  margin-top: 30px;
+}
+
+.fitness-section .membership-card {
+  margin-bottom: 16px;
+  padding: 24px;
+}
+
+/* ---------- MEMBERSHIP REMINDER PREFERENCES (Phase 8) ---------- */
+.reminder-preferences {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.reminder-description,
+.reminder-help {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.reminder-help { font-size: 0.84rem; margin-top: 12px; }
+
+.reminder-status {
+  color: var(--color-text-secondary);
+  min-height: 1.5em;
+  margin: 12px 0;
+}
+
+.reminder-status.error { color: #ff7b91; }
+.reminder-status.success { color: #7ce6b2; }
+
+.reminder-enable-option,
+.reminder-lead-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.reminder-enable-option { font-weight: 600; margin: 6px 0 18px; }
+.reminder-enable-option input,
+.reminder-lead-options input { accent-color: var(--color-neon-blue); }
+
+.reminder-lead-group {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px 16px 16px;
+}
+
+.reminder-lead-group legend {
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  padding: 0 6px;
+}
+
+.reminder-lead-options { display: flex; flex-wrap: wrap; gap: 12px 22px; }
+.reminder-lead-options label { min-height: 36px; }
+.reminder-preferences button { margin-top: 6px; }
+
+@media (max-width: 600px) {
+  .reminder-preferences { padding: 22px 18px; }
+  .reminder-lead-options { flex-direction: column; gap: 8px; }
+}
+
+/* ---------- AI WORKOUT PLAN (Step 3) ---------- */
+.plan-summary { color: var(--color-text-secondary, #b0b8c4); margin-bottom: 16px; line-height: 1.6; }
+.plan-day { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 14px; padding: 16px 18px; margin-bottom: 12px; }
+.plan-day.rest { opacity: 0.8; border-style: dashed; }
+.plan-day-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.plan-day-head strong { color: var(--color-neon-blue); font-family: var(--font-display); letter-spacing: 1px; font-size: 1.1rem; }
+.plan-day-head span { color: var(--color-text-primary); font-weight: 600; }
+.plan-day-head em { margin-left: auto; font-style: normal; font-size: 0.85rem; opacity: 0.75; }
+.plan-exercises { list-style: none; padding: 0; margin: 0; }
+.plan-exercises li { display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 8px 0; border-top: 1px solid var(--color-border); }
+.plan-ex-name { font-weight: 500; }
+.plan-ex-sets { margin-left: auto; color: var(--color-neon-blue); font-weight: 600; }
+.plan-exercises small { flex-basis: 100%; opacity: 0.7; }
+.plan-rest { margin: 0; opacity: 0.75; }
+.plan-tips-title { margin: 18px 0 8px; font-size: 1.1rem; }
+.plan-tips { padding-left: 20px; line-height: 1.6; margin-bottom: 16px; }
+.plan-disclaimer { margin-top: 14px; font-size: 0.8rem; opacity: 0.65; line-height: 1.5; }
+#generatePlanBtn { margin-top: 8px; }
+
+/* ---------- AI DAILY PLANNER (Step 4) ---------- */
+.daily-time { min-width: 76px; color: var(--color-neon-blue); font-weight: 600; }
+.plan-exercises li.daily-workout { background: rgba(0, 200, 255, 0.07); border-radius: 8px; padding-left: 8px; }
+#dailyPlanSection .form-group { margin: 12px 0; }
+#generateDailyBtn { margin-top: 4px; }
+
+/* ---------- FITNESS PROGRESS (Step 5) ---------- */
+.progress-chart-wrap { margin: 16px 0; }
+.progress-chart { width: 100%; max-width: 520px; height: auto; display: block; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; }
+.progress-chart-line { fill: none; stroke: var(--color-neon-blue); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.progress-chart-dot { fill: var(--color-neon-blue); }
+.progress-list { margin: 16px 0; }
+.progress-item { align-items: baseline; }
+.progress-actions { margin-left: auto; display: flex; gap: 12px; }
+.progress-link-btn { background: none; border: none; padding: 0; cursor: pointer; font: inherit; font-size: 0.85rem; color: var(--color-neon-blue); }
+.progress-link-btn.danger { color: #ff5c5c; }
+.progress-link-btn:hover { text-decoration: underline; }
+#progressForm { margin-top: 8px; display: block; }

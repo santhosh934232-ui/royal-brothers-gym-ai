@@ -1,0 +1,251 @@
+/* ============================================
+   ROYAL BROTHERS FITNESS GYM - SERVICES PAGE
+   New classes only. Uses the same CSS variables
+   already defined in style.css — load this file
+   AFTER style.css in the <head>.
+   ============================================ */
+
+/* ---------- PAGE BANNER ---------- */
+/* Gradient-only banner (no background image) so it can never render
+   blank/black like the old about-page banner did. */
+.page-banner {
+  padding: 170px 0 80px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 217, 255, 0.16),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(168, 85, 247, 0.16),
+      transparent 45%
+    ),
+    var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-banner-title {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  letter-spacing: 1px;
+  color: var(--color-text-primary);
+  margin-bottom: 14px;
+}
+
+.page-banner-desc {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  max-width: 560px;
+  margin-bottom: 24px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb a {
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-neon-blue);
+}
+
+.breadcrumb i {
+  font-size: 0.7rem;
+}
+
+.breadcrumb-current {
+  color: var(--color-neon-blue);
+}
+
+/* ---------- SERVICES DETAIL SECTION ---------- */
+.services-detail {
+  padding: var(--section-padding);
+}
+
+.services-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.service-detail-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  padding: 36px 30px;
+  transition: all var(--transition-medium);
+}
+
+.service-detail-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-neon-blue);
+  box-shadow: 0 10px 40px rgba(0, 217, 255, 0.15);
+}
+
+.service-detail-card .service-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 0 20px;
+  font-size: 1.4rem;
+}
+
+.service-detail-card h3 {
+  color: var(--color-text-primary);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.service-detail-card > p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+
+.service-includes li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.86rem;
+  color: var(--color-text-secondary);
+}
+
+.service-includes li:first-child {
+  border-top: none;
+}
+
+.service-includes i {
+  color: var(--color-neon-blue);
+  font-size: 0.8rem;
+}
+
+/* ---------- PROCESS / HOW IT WORKS ---------- */
+.process-section {
+  padding: var(--section-padding);
+  background: var(--color-bg-secondary);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.process-step {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 32px 26px;
+  position: relative;
+}
+
+.process-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  background: var(--gradient-blue-purple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 14px;
+}
+
+.process-step h3 {
+  color: var(--color-text-primary);
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.process-step p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- WHY OUR TRAINING WORKS ---------- */
+.why-training {
+  padding: var(--section-padding);
+}
+
+.why-training-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.why-training-content p {
+  margin-bottom: 24px;
+}
+
+.why-training-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.why-training-stats .stat-box {
+  text-align: center;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+  .services-detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-training-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-training-stats {
+    order: -1;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-banner {
+    padding: 150px 0 60px;
+  }
+
+  .page-banner-title {
+    font-size: 2.4rem;
+  }
+
+  .services-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-training-stats {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 28px;
+  }
+}

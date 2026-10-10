@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Royal Brothers Fitness Gym</title>
+    <meta
+      name="description"
+      content="Login to your Royal Brothers Fitness Gym member account."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Main site stylesheet (shared variables, colors, buttons) -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Login page stylesheet -->
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="auth-page">
+      <!-- ============ LEFT BRAND PANEL ============ -->
+      <div class="auth-brand">
+        <a href="index.html" class="logo auth-logo">
+          <span class="logo-text"
+            >ROYAL<span class="logo-accent">BROTHERS</span></span
+          >
+          <span class="logo-sub">FITNESS GYM</span>
+        </a>
+
+        <div class="auth-brand-content">
+          <h1 class="auth-brand-title">
+            WELCOME <span class="text-neon-blue">BACK</span>
+          </h1>
+          <p class="auth-brand-desc">
+            Log in to check your membership, track your plan, and stay on top of
+            your fitness journey at Royal Brothers Fitness Gym.
+          </p>
+
+          <ul class="auth-brand-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Belur Main Road,
+              Koottathupatti
+            </li>
+            <li><i class="fa-solid fa-circle-check"></i> Open 6 Days a Week</li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Separate Men's & Women's
+              Timings
+            </li>
+          </ul>
+        </div>
+
+        <a href="index.html" class="auth-back-link">
+          <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
+
+      <!-- ============ RIGHT LOGIN FORM ============ -->
+      <div class="auth-form-panel">
+        <div class="auth-card">
+          <span class="section-tag">MEMBER LOGIN</span>
+          <h2 class="auth-title">Log In to Your Account</h2>
+          <p class="auth-subtitle">
+            Enter your details below to access your account.
+          </p>
+
+          <form class="auth-form" id="loginForm" novalidate>
+            <div class="form-group">
+              <label for="loginEmail">Email Address</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+                <input
+                  type="email"
+                  id="loginEmail"
+                  name="loginEmail"
+                  placeholder="Enter your email address"
+                  autocomplete="username"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                  type="password"
+                  id="loginPassword"
+                  name="loginPassword"
+                  placeholder="Enter your password"
+                  autocomplete="current-password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  id="togglePassword"
+                  aria-label="Show password"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="checkbox-wrapper">
+                <input type="checkbox" id="rememberMe" name="rememberMe" />
+                <span class="checkbox-custom"></span>
+                Remember me
+              </label>
+              <a href="forgot-password.html" class="forgot-link"
+                >Forgot Password?</a
+              >
+            </div>
+
+            <p class="form-error" id="formError" role="alert"></p>
+
+            <button type="submit" class="btn btn-neon-lg auth-submit">
+              Log In
+            </button>
+
+            <p class="auth-footer-text resend-verification-text">
+              Didn't get a verification email?
+              <a href="#" id="resendVerificationLink" class="auth-link"
+                >Resend it</a
+              >
+            </p>
+          </form>
+
+          <div class="auth-divider"><span>OR</span></div>
+
+          <p class="auth-footer-text">
+            Don't have an account?
+            <a href="register.html" class="auth-link">Join Now</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

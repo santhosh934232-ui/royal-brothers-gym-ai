@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member Journey Friction Insights | Royal Brothers Fitness Gym</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/admin.css" />
+  </head>
+  <body class="admin-body">
+    <header class="admin-topbar">
+      <div class="admin-topbar-logo">
+        <span class="logo-text">ROYAL<span class="logo-accent">BROTHERS</span></span>
+        <span class="logo-sub">ADMIN DASHBOARD</span>
+      </div>
+      <div class="admin-topbar-actions">
+        <a href="/admin-dashboard.html" class="btn btn-outline">
+          <i class="fa-solid fa-arrow-left"></i> Back to dashboard
+        </a>
+      </div>
+    </header>
+
+    <div class="admin-layout">
+      <nav class="admin-sidebar" aria-label="Admin navigation">
+        <a class="admin-tab-btn" href="/admin-dashboard.html">
+          <span><i class="fa-solid fa-gauge"></i> Dashboard</span>
+        </a>
+        <a class="admin-tab-btn active" href="/admin/friction-insights" aria-current="page">
+          <span><i class="fa-solid fa-route"></i> Journey Friction Insights</span>
+        </a>
+      </nav>
+
+      <main class="admin-content fi-page">
+        <h2 class="admin-section-title">Member Journey Friction Insights</h2>
+        <p class="fi-lead">
+          Read-only. Shows verified counts from the website's contact messages and membership
+          records, and optional AI interpretations of them. Nothing on this page changes any
+          member, request, plan or message, and no e-mail is sent.
+        </p>
+
+        <div class="fi-controls">
+          <label for="fiSince" class="fi-label">Time window</label>
+          <select id="fiSince" class="admin-search-input fi-select">
+            <option value="all">All available data</option>
+            <option value="30">Last 30 days</option>
+            <option value="90">Last 90 days</option>
+            <option value="180">Last 180 days</option>
+            <option value="365">Last 365 days</option>
+          </select>
+          <button type="button" class="btn btn-outline" id="fiRefreshBtn">
+            <i class="fa-solid fa-rotate"></i> Refresh metrics
+          </button>
+          <button type="button" class="btn btn-neon" id="fiGenerateBtn" disabled>
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Generate AI insights
+          </button>
+        </div>
+
+        <p id="fiStatus" class="profile-status fi-status" role="status" aria-live="polite">
+          Loading verified metrics...
+        </p>
+        <p id="fiAiNote" class="fi-note" hidden></p>
+
+        <!-- ---------- VERIFIED DATA ---------- -->
+        <section id="fiVerified" class="fi-section" hidden>
+          <h3 class="fi-heading">
+            <span class="fi-tag fi-tag-verified">VERIFIED DATA</span> Counted from the database
+          </h3>
+          <div class="admin-stats-grid" id="fiStats"></div>
+
+          <h4 class="fi-subheading">Contact-message topics</h4>
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="fiTopicsTable">
+              <thead>
+                <tr>
+                  <th>Topic</th>
+                  <th>Messages</th>
+                  <th>Distinct senders</th>
+                  <th>Evidence strength</th>
+                  <th>First seen</th>
+                  <th>Last seen</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <h4 class="fi-subheading">Findings backed by the data</h4>
+          <div id="fiFindings" class="fi-cards"></div>
+        </section>
+
+        <!-- ---------- INSUFFICIENT / EMPTY ---------- -->
+        <section id="fiNeeds" class="fi-section" hidden>
+          <h3 class="fi-heading">What would help</h3>
+          <ul id="fiNeedsList" class="fi-list"></ul>
+          <ul id="fiTipsList" class="fi-list fi-list-muted"></ul>
+        </section>
+
+        <!-- ---------- AI INTERPRETATION ---------- -->
+        <section id="fiAi" class="fi-section" hidden>
+          <h3 class="fi-heading">
+            <span class="fi-tag fi-tag-ai">AI INTERPRETATION</span> Possible, not proven
+          </h3>
+          <div id="fiInsights" class="fi-cards"></div>
+          <ul id="fiGeneral" class="fi-list fi-list-muted"></ul>
+        </section>
+
+        <section id="fiMeta" class="fi-section" hidden>
+          <p id="fiPriorityRule" class="fi-note"></p>
+          <ul id="fiWarnings" class="fi-list fi-list-muted"></ul>
+          <details class="fi-details">
+            <summary>What this data cannot show</summary>
+            <ul id="fiLimitations" class="fi-list fi-list-muted"></ul>
+          </details>
+          <p id="fiDisclaimer" class="plan-disclaimer"></p>
+          <p id="fiGeneratedAt" class="fi-note"></p>
+        </section>
+      </main>
+    </div>
+
+    <script src="/admin-friction-insights.js"></script>
+  </body>
+</html>

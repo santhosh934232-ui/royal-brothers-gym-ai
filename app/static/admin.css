@@ -1,0 +1,1098 @@
+/* ============================================
+   ROYAL BROTHERS FITNESS GYM - ADMIN PANEL
+   Uses the same design tokens as style.css
+   ============================================ */
+
+/* ---------- SHARED STATUS TEXT ---------- */
+.profile-status {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  padding: 60px 20px;
+}
+
+.auth-link {
+  color: var(--color-neon-blue);
+  font-weight: 600;
+}
+
+/* ============================================
+   ADMIN LOGIN PAGE
+   ============================================ */
+.admin-login-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  padding: 20px;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 44px 36px;
+}
+
+.admin-login-logo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+}
+
+.admin-login-logo .logo-text {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-text-primary);
+  letter-spacing: 1px;
+}
+
+.admin-login-logo .logo-sub {
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.admin-login-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.admin-login-desc {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 28px;
+}
+
+.admin-login-form .form-group {
+  margin-bottom: 20px;
+}
+
+.admin-login-form label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.admin-login-form input {
+  width: 100%;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+}
+
+.admin-login-form input:focus {
+  outline: none;
+  border-color: var(--color-neon-blue);
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper .toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.admin-login-submit {
+  width: 100%;
+  margin-top: 4px;
+}
+
+/* ============================================
+   ADMIN DASHBOARD
+   ============================================ */
+.admin-body {
+  background: var(--color-bg);
+  min-height: 100vh;
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-topbar-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-topbar-logo .logo-text {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text-primary);
+  letter-spacing: 1px;
+}
+
+.admin-topbar-logo .logo-sub {
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  color: var(--color-text-muted);
+}
+
+.admin-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-username {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.admin-layout {
+  display: flex;
+  min-height: calc(100vh - 76px);
+}
+
+/* ---------- SIDEBAR ---------- */
+.admin-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--color-bg-secondary);
+  border-right: 1px solid var(--color-border);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-primary);
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  justify-content: space-between;
+}
+
+.admin-tab-btn i {
+  width: 18px;
+  color: var(--color-text-muted);
+}
+
+.admin-tab-btn:hover {
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+}
+
+.admin-tab-btn.active {
+  background: var(--color-bg-card);
+  border-left-color: var(--color-neon-blue);
+  color: var(--color-text-primary);
+}
+
+.admin-tab-btn.active i {
+  color: var(--color-neon-blue);
+}
+
+/* ---------- SIDEBAR NOTIFICATION BADGES (NEW) ---------- */
+.sidebar-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  margin-left: auto;
+  background: #ff5c7a;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 50px;
+  line-height: 1;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.admin-content {
+  flex: 1;
+  padding: 32px;
+  overflow-x: auto;
+}
+
+.admin-tab-panel {
+  display: none;
+}
+
+.admin-tab-panel.active {
+  display: block;
+}
+
+.admin-section-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+/* ---------- STATS GRID ---------- */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.admin-stat-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.admin-stat-card h3 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  background: var(--gradient-blue-purple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+}
+
+.admin-stat-card p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- TABLES ---------- */
+.admin-table-wrap {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 16px 20px;
+  background: var(--color-bg-card-hover);
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-table td {
+  padding: 16px 20px;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table td.message-cell {
+  max-width: 280px;
+  white-space: normal;
+}
+
+/* ---------- STATUS BADGES ---------- */
+.status-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.status-badge.pending {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+}
+
+.status-badge.active {
+  background: rgba(0, 217, 255, 0.15);
+  color: var(--color-neon-blue);
+}
+
+.status-badge.rejected {
+  background: rgba(255, 92, 122, 0.15);
+  color: #ff5c7a;
+}
+
+.status-badge.unread {
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--color-neon-purple);
+}
+
+.status-badge.read {
+  background: var(--color-bg-card-hover);
+  color: var(--color-text-muted);
+}
+
+/* ---------- ACTION BUTTONS (small, inline in tables) ---------- */
+.admin-action-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-right: 6px;
+  font-family: var(--font-primary);
+}
+
+.admin-action-btn.approve {
+  background: var(--color-neon-blue);
+  color: #06202a;
+}
+
+.admin-action-btn.reject {
+  background: #ff5c7a;
+  color: #2a0610;
+}
+
+.admin-action-btn.delete {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.admin-action-btn:hover {
+  opacity: 0.85;
+}
+
+/* ---------- ADD PLAN FORM ---------- */
+.admin-inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.admin-inline-form input {
+  flex: 1 1 160px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+}
+
+.admin-inline-form input:focus {
+  outline: none;
+  border-color: var(--color-neon-blue);
+}
+
+/* ---------- REAL-TIME SEARCH (NEW) ---------- */
+.admin-search-bar {
+  margin-bottom: 16px;
+}
+
+.admin-search-input {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+}
+
+.admin-search-input:focus {
+  outline: none;
+  border-color: var(--color-neon-blue);
+}
+
+.admin-search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   DELETE CONFIRMATION MODAL (secure delete workflow)
+   Reused for Membership Plans and Membership Requests.
+   Hidden by default via display:none; JS toggles display to
+   "flex" then adds .show on the next frame so the opacity/
+   transform transitions below actually animate in.
+   ============================================ */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 8, 14, 0.72);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.modal-backdrop.show .modal-overlay {
+  opacity: 1;
+}
+
+.modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-align: center;
+  transform: translateY(24px) scale(0.96);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.modal-backdrop.show .modal-box {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.modal-icon-wrap {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(255, 92, 122, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-icon-wrap i {
+  font-size: 1.6rem;
+  color: #ff5c7a;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.modal-message {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.modal-password-wrap {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.modal-password-input {
+  width: 100%;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 42px 12px 16px;
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: 0.92rem;
+}
+
+.modal-password-input:focus {
+  outline: none;
+  border-color: var(--color-neon-blue);
+}
+
+.modal-password-wrap .toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-actions .btn {
+  flex: 1;
+}
+
+.btn-danger {
+  background: #ff5c7a;
+  color: #2a0610;
+  border: none;
+}
+
+.btn-danger:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.btn-danger:disabled,
+.modal-actions .btn-outline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(42, 6, 16, 0.35);
+  border-top-color: #2a0610;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  animation: deleteModalSpin 0.7s linear infinite;
+}
+
+@keyframes deleteModalSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-box {
+    padding: 26px 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+}
+
+/* ---------- TOAST (reused pattern) ---------- */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-neon-blue);
+  color: var(--color-text-primary);
+  padding: 16px 28px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 3000;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.error {
+  border-color: #ff5c7a;
+  box-shadow: 0 0 30px rgba(255, 92, 122, 0.2);
+}
+
+/* ---------- FORM ERROR (admin login) ---------- */
+.form-error {
+  display: none;
+  font-size: 0.85rem;
+  color: #ff5c7a;
+  background: rgba(255, 92, 122, 0.1);
+  border: 1px solid rgba(255, 92, 122, 0.3);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+.form-error.show {
+  display: block;
+}
+
+/* ---------- RESPONSIVE (existing tablet breakpoint — unchanged) ---------- */
+@media (max-width: 900px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: 12px;
+  }
+
+  .admin-tab-btn {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    padding: 10px 16px;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .admin-tab-btn.active {
+    border-bottom-color: var(--color-neon-blue);
+  }
+
+  .admin-content {
+    padding: 20px;
+  }
+
+  .sidebar-badge {
+    margin-left: 4px;
+  }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE IMPROVEMENTS (NEW)
+   Everything above this point is unchanged from the
+   original file, so the desktop (>900px) layout is
+   identical to before. These rules only kick in on
+   small screens and only adjust spacing/sizing —
+   no colors, animations, or structure are changed.
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* ---------- Stop any stray horizontal overflow ---------- */
+  .admin-body {
+    overflow-x: hidden;
+  }
+
+  /* ---------- Top bar ---------- */
+  .admin-topbar {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding: 14px 18px;
+  }
+
+  .admin-topbar-logo .logo-text {
+    font-size: 1.15rem;
+  }
+
+  .admin-topbar-actions {
+    gap: 10px;
+  }
+
+  .admin-username {
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* ---------- Sidebar tabs: bigger, easier to tap ---------- */
+  .admin-tab-btn {
+    padding: 12px 18px;
+    font-size: 0.86rem;
+    min-height: 44px;
+  }
+
+  /* ---------- Content area spacing ---------- */
+  .admin-content {
+    padding: 16px;
+  }
+
+  .admin-section-title {
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+  }
+
+  /* ---------- Stat cards: two per row instead of squeezing ---------- */
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .admin-stat-card {
+    padding: 18px;
+  }
+
+  .admin-stat-card h3 {
+    font-size: 1.7rem;
+  }
+
+  /* ---------- Tables: tighter but still readable, smooth scroll ---------- */
+  .admin-table-wrap {
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 12px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Contact Messages page: message text was overflowing/cramped —
+     narrower max-width plus forced word-break keeps long words and
+     URLs from pushing the table wider than necessary. */
+  .admin-table td.message-cell {
+    max-width: 220px;
+    word-break: break-word;
+  }
+
+  .status-badge {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+  }
+
+  /* ---------- Action buttons: bigger tap targets, wrap cleanly ---------- */
+  .admin-action-btn {
+    padding: 9px 14px;
+    font-size: 0.8rem;
+    min-height: 38px;
+    margin-right: 8px;
+    margin-bottom: 6px;
+  }
+
+  /* ---------- Add Plan form: stack fields full-width ---------- */
+  .admin-inline-form {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .admin-inline-form input,
+  .admin-inline-form button {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  /* ---------- Search boxes: full-width on mobile (NEW) ---------- */
+  .admin-search-input {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-topbar {
+    padding: 12px 14px;
+  }
+
+  .admin-topbar-logo .logo-text {
+    font-size: 1rem;
+  }
+
+  .admin-topbar-logo .logo-sub {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+  }
+
+  .admin-username {
+    max-width: 90px;
+    font-size: 0.82rem;
+  }
+
+  .admin-content {
+    padding: 12px;
+  }
+
+  .admin-section-title {
+    font-size: 1.2rem;
+  }
+
+  /* Single column on very small phones so numbers stay legible */
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 10px 12px;
+    font-size: 0.78rem;
+  }
+
+  .admin-table td.message-cell {
+    max-width: 150px;
+  }
+
+  .status-badge {
+    font-size: 0.66rem;
+    padding: 4px 10px;
+  }
+
+  /* ---------- Admin login card ---------- */
+  .admin-login-card {
+    padding: 32px 22px;
+  }
+
+  .admin-login-title {
+    font-size: 1.5rem;
+  }
+
+  .password-wrapper .toggle-password {
+    right: 10px;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+/* ============================================
+   MEMBER JOURNEY FRICTION INSIGHTS (Phase 3)
+   Reuses the existing admin design tokens; no new colours or fonts.
+   ============================================ */
+a.admin-nav-link {
+  text-decoration: none;
+}
+
+.admin-nav-link i,
+.admin-sidebar a.admin-tab-btn i {
+  margin-right: 12px;
+}
+
+.fi-page {
+  max-width: 1100px;
+}
+
+.fi-lead,
+.fi-note {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.fi-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.fi-label {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+.fi-select {
+  width: auto;
+  min-width: 190px;
+}
+
+.fi-status {
+  padding: 8px 0;
+  text-align: left;
+}
+
+.fi-status-error {
+  color: #ff6b6b;
+}
+
+.fi-section {
+  margin-top: 28px;
+}
+
+.fi-heading {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+}
+
+.fi-subheading {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  margin: 24px 0 12px;
+}
+
+.fi-tag {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-right: 10px;
+  vertical-align: middle;
+  border: 1px solid var(--color-border);
+}
+
+.fi-tag-verified {
+  color: var(--color-neon-blue);
+  border-color: var(--color-neon-blue);
+}
+
+.fi-tag-ai {
+  color: var(--color-text-secondary);
+  border-style: dashed;
+}
+
+.fi-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.fi-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 20px 24px;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.fi-card p {
+  margin-bottom: 8px;
+}
+
+.fi-card-ai {
+  border-style: dashed;
+}
+
+.fi-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.fi-card-title {
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.fi-fact {
+  color: var(--color-text-primary);
+}
+
+.fi-mini-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 12px;
+}
+
+.fi-ai-label {
+  color: var(--color-neon-blue);
+}
+
+.fi-recommendation {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.fi-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.fi-badge-priority-high {
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.fi-badge-priority-medium {
+  color: #ffc857;
+  border-color: #ffc857;
+}
+
+.fi-list {
+  margin: 4px 0 8px 20px;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.fi-list-muted {
+  color: var(--color-text-muted);
+}
+
+.fi-details {
+  margin: 8px 0 16px;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+.fi-details summary {
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .fi-controls .btn,
+  .fi-select {
+    width: 100%;
+  }
+}

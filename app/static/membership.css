@@ -1,0 +1,410 @@
+/* ============================================
+   ROYAL BROTHERS FITNESS GYM - MEMBERSHIP PAGE
+   ============================================ */
+
+.membership-intro {
+  padding: 140px 0 60px;
+}
+
+.page-title {
+  font-family: var(--font-heading, "Bebas Neue"), sans-serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--color-text-primary);
+  margin: 16px 0 8px;
+}
+
+.page-subtitle {
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 0 auto 16px;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-neon-blue);
+}
+
+.breadcrumb i {
+  font-size: 0.7rem;
+}
+
+/* ---------- PLANS ---------- */
+.plans-section {
+  padding: 40px 0 80px;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ---------- DYNAMIC LOADING / EMPTY STATE (NEW) ---------- */
+.plans-loading,
+.plans-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  padding: 60px 20px;
+}
+
+.plan-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: center;
+  position: relative;
+  transition: transform var(--transition-fast, 0.2s ease);
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+}
+
+.plan-featured {
+  border-color: var(--color-neon-blue);
+  transform: scale(1.03);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-neon-blue);
+  color: #0a0a0f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.plan-name {
+  font-size: 1.3rem;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.plan-tagline {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.plan-price {
+  font-family: var(--font-heading, "Bebas Neue"), sans-serif;
+  font-size: 2.8rem;
+  color: var(--color-neon-blue);
+  margin-bottom: 20px;
+}
+
+.plan-price span {
+  font-size: 1.4rem;
+  vertical-align: top;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  text-align: left;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+}
+
+.plan-features li i {
+  color: var(--color-neon-blue);
+  width: 16px;
+}
+
+.plan-features li.not-included {
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+.plan-features li.not-included i {
+  color: var(--color-text-muted);
+}
+
+.btn-full {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+/* ---------- WHAT'S INCLUDED ---------- */
+.included-section {
+  padding: 80px 0;
+  background: var(--color-bg-alt, rgba(255, 255, 255, 0.02));
+}
+
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.included-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.included-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-neon-blue-glow);
+  color: var(--color-neon-blue);
+  font-size: 1.3rem;
+}
+
+.included-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--color-text-primary);
+}
+
+.included-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ---------- FAQ ---------- */
+.faq-section {
+  padding: 80px 0;
+}
+
+.faq-list {
+  max-width: 760px;
+  margin: 40px auto 0;
+}
+
+.faq-item {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  background: var(--color-bg-card);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-question i {
+  color: var(--color-neon-blue);
+  transition: transform var(--transition-fast, 0.2s ease);
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-fast, 0.3s ease);
+  padding: 0 24px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 24px 20px;
+}
+
+.faq-answer p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-featured {
+    transform: none;
+  }
+
+  .included-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .included-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   MEMBERSHIP REQUEST MODAL + TOAST
+   (added for the Get Started confirmation workflow)
+   ============================================ */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-box {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 36px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 0 60px rgba(0, 217, 255, 0.15);
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.modal-details {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.modal-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.modal-row strong {
+  color: var(--color-neon-blue);
+}
+
+.modal-question {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.modal-actions .btn {
+  flex: 1;
+  text-align: center;
+}
+
+/* ---------- TOAST NOTIFICATION ---------- */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-neon-blue);
+  color: var(--color-text-primary);
+  padding: 16px 28px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 3000;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.error {
+  border-color: #ff5c7a;
+  box-shadow: 0 0 30px rgba(255, 92, 122, 0.2);
+}
+
+/* ---------- DISABLED / STATUS PLAN BUTTONS ---------- */
+.get-started-btn.btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: var(--color-bg-card-hover);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .modal-box {
+    padding: 28px 22px;
+  }
+}

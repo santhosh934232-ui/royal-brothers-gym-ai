@@ -1,0 +1,43 @@
+# ---------- Environment / secrets ----------
+.env
+.env.*
+!.env.example
+
+# ---------- SQLite database ----------
+# The actual database file contains real member/admin data and must
+# never be committed. Run schema/schema.sql locally (see README) to
+# recreate it from scratch on any machine.
+*.db
+*.sqlite
+*.sqlite3
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.Python
+build/
+dist/
+
+# ---------- Virtual environments ----------
+venv/
+.venv/
+env/
+ENV/
+
+# ---------- IDE / OS ----------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---------- Logs ----------
+*.log
+
+# ---------- User-uploaded content ----------
+# Profile photos are runtime-generated user data, not source code.
+# Keep the folder in git (via .gitkeep) but ignore its contents.
+app/static/uploads/profile_photos/*
+!app/static/uploads/profile_photos/.gitkeep

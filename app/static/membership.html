@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membership Plans | Royal Brothers Fitness Gym</title>
+    <meta
+      name="description"
+      content="Royal Brothers Fitness Gym membership plans - Belur Main Road, Koottathupatti. 1, 3, and 6 month plans available."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="membership.css" />
+  </head>
+  <body>
+    <div class="preloader" id="preloader">
+      <div class="loader-spinner"></div>
+    </div>
+
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="index.html" class="logo">
+          <span class="logo-text"
+            >ROYAL<span class="logo-accent">BROTHERS</span></span
+          >
+          <span class="logo-sub">FITNESS GYM</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li>
+            <a href="membership.html" class="nav-link active">Membership</a>
+          </li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-neon">Join Now</a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ============ PAGE INTRO ============ -->
+    <section class="membership-intro">
+      <div class="container text-center">
+        <span class="section-tag">PRICING</span>
+        <h1 class="page-title">
+          Membership <span class="text-neon-blue">Plans</span>
+        </h1>
+        <p class="page-subtitle">
+          Simple, transparent pricing. Choose the plan that fits your fitness
+          journey — no hidden charges.
+        </p>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Membership</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLANS (dynamically loaded from the database) ============ -->
+    <section class="plans-section">
+      <div class="container">
+        <div class="plans-grid" id="plansGrid">
+          <p class="plans-loading">Loading membership plans...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT'S INCLUDED ============ -->
+    <section class="included-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">EVERY PLAN INCLUDES</span>
+          <h2 class="section-title">
+            No Matter The <span class="text-neon-blue">Plan</span>
+          </h2>
+        </div>
+
+        <div class="included-grid">
+          <div class="included-card">
+            <div class="included-icon">
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <h3>Full Equipment Access</h3>
+            <p>
+              Free weights, machines, and cardio equipment — no restrictions.
+            </p>
+          </div>
+          <div class="included-card">
+            <div class="included-icon"><i class="fa-solid fa-lock"></i></div>
+            <h3>Locker Facility</h3>
+            <p>Secure storage for your belongings during every workout.</p>
+          </div>
+          <div class="included-card">
+            <div class="included-icon">
+              <i class="fa-solid fa-user-group"></i>
+            </div>
+            <h3>Gym Support</h3>
+            <p>Our team is on hand to guide your form and routine.</p>
+          </div>
+          <div class="included-card">
+            <div class="included-icon">
+              <i class="fa-solid fa-venus-mars"></i>
+            </div>
+            <h3>Men's & Women's Timing</h3>
+            <p>Separate slots so everyone trains comfortably.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">GOT QUESTIONS?</span>
+          <h2 class="section-title">
+            Frequently Asked <span class="text-neon-blue">Questions</span>
+          </h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I upgrade my plan later?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes, you can upgrade from a shorter plan to a longer one at any
+                time — just visit the gym or contact us to adjust your
+                membership.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a joining fee?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                No hidden joining fees. The price you see is the price you pay
+                for your selected plan.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you offer personal training separately?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Personal training is included with the 6-month plan. Members on
+                shorter plans can contact us about add-on sessions.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What are the gym timings?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Men: 5:00 AM–9:00 AM & 5:00 PM–9:00 PM. Women: 8:00 AM–10:00 AM
+                & 4:00 PM–6:00 PM.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CALL TO ACTION ============ -->
+    <section class="cta-section">
+      <div class="container cta-content text-center">
+        <h2>
+          Ready To Start Your
+          <span class="text-neon-blue">Fitness Journey?</span>
+        </h2>
+        <p>
+          Join <strong>Royal Brothers Fitness Gym</strong> today and take the
+          first step towards a stronger you.
+        </p>
+        <a href="register.html" class="btn btn-neon-lg">Join Now</a>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-logo">
+            ROYAL<span class="logo-accent">BROTHERS</span>
+          </h3>
+          <p>
+            Royal Brothers Fitness Gym — your ultimate destination for strength,
+            fitness, and transformation.
+          </p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="services.html">Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fa-solid fa-location-dot"></i> Belur Main Road,
+              Koottathupatti
+            </li>
+            <li><i class="fa-solid fa-phone"></i> 63807 78788</li>
+            <li><i class="fa-solid fa-phone"></i> 90805 48638</li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>royalbrothersgym@gmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="year"></span> Royal Brothers Fitness Gym. All Rights
+          Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ============ MEMBERSHIP CONFIRMATION MODAL ============ -->
+    <div class="modal-overlay" id="membershipModal">
+      <div class="modal-box">
+        <h3 class="modal-title">Confirm Membership Request</h3>
+        <div class="modal-details">
+          <div class="modal-row">
+            <span>Plan</span>
+            <strong id="modalPlanName">-</strong>
+          </div>
+          <div class="modal-row">
+            <span>Duration</span>
+            <strong id="modalDuration">-</strong>
+          </div>
+          <div class="modal-row">
+            <span>Price</span>
+            <strong id="modalPrice">-</strong>
+          </div>
+        </div>
+        <p class="modal-question">
+          Do you want to submit this membership request?
+        </p>
+        <div class="modal-actions">
+          <button id="modalCancelBtn" class="btn btn-outline">Cancel</button>
+          <button id="modalConfirmBtn" class="btn btn-neon">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ TOAST NOTIFICATION ============ -->
+    <div class="toast" id="toast"></div>
+
+    <script src="auth-cache.js"></script>
+    <script src="script.js"></script>
+    <script src="membership.js"></script>
+  </body>
+</html>

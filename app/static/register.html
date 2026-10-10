@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Now | Royal Brothers Fitness Gym</title>
+    <meta
+      name="description"
+      content="Create your Royal Brothers Fitness Gym member account and join today."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Main site stylesheet (shared variables, colors, buttons) -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Shared auth page stylesheet (also used by login.html) -->
+    <link rel="stylesheet" href="login.css" />
+    <!-- Register page specific tweaks -->
+    <link rel="stylesheet" href="register.css" />
+  </head>
+  <body>
+    <div class="auth-page">
+      <!-- ============ LEFT BRAND PANEL ============ -->
+      <div class="auth-brand">
+        <a href="index.html" class="logo auth-logo">
+          <span class="logo-text"
+            >ROYAL<span class="logo-accent">BROTHERS</span></span
+          >
+          <span class="logo-sub">FITNESS GYM</span>
+        </a>
+
+        <div class="auth-brand-content">
+          <h1 class="auth-brand-title">
+            JOIN THE <span class="text-neon-purple">FAMILY</span>
+          </h1>
+          <p class="auth-brand-desc">
+            Create your free account to book your slot, track your membership,
+            and start training at Royal Brothers Fitness Gym.
+          </p>
+
+          <ul class="auth-brand-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i> 500+ Members Already
+              Training
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Flexible 1 / 3 / 6 Month
+              Plans
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Separate Men's & Women's
+              Timings
+            </li>
+          </ul>
+        </div>
+
+        <a href="index.html" class="auth-back-link">
+          <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
+
+      <!-- ============ RIGHT REGISTER FORM ============ -->
+      <div class="auth-form-panel">
+        <div class="auth-card">
+          <span class="section-tag">CREATE ACCOUNT</span>
+          <h2 class="auth-title">Join Now</h2>
+          <p class="auth-subtitle">
+            Fill in your details to create your member account.
+          </p>
+
+          <form class="auth-form" id="registerForm" novalidate>
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="Enter your full name"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="registerEmail">Email Address</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+                <input
+                  type="email"
+                  id="registerEmail"
+                  name="registerEmail"
+                  placeholder="Enter your email address"
+                  autocomplete="username"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <div class="input-wrapper select-wrapper">
+                <i class="fa-solid fa-venus-mars"></i>
+                <select id="gender" name="gender" required>
+                  <option value="" disabled selected>Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="registerPassword">Password</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                  type="password"
+                  id="registerPassword"
+                  name="registerPassword"
+                  placeholder="Create a password"
+                  autocomplete="new-password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  data-target="registerPassword"
+                  aria-label="Show password"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Re-enter your password"
+                  autocomplete="new-password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  data-target="confirmPassword"
+                  aria-label="Show password"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <label class="checkbox-wrapper terms-checkbox">
+              <input type="checkbox" id="agreeTerms" name="agreeTerms" />
+              <span class="checkbox-custom"></span>
+              I agree to the
+              <a href="#" class="auth-link">Terms & Conditions</a>
+            </label>
+
+            <p class="form-error" id="formError" role="alert"></p>
+
+            <button type="submit" class="btn btn-neon-lg auth-submit">
+              Create Account
+            </button>
+          </form>
+
+          <div class="auth-divider"><span>OR</span></div>
+
+          <p class="auth-footer-text">
+            Already have an account?
+            <a href="login.html" class="auth-link">Log In</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="register.js"></script>
+  </body>
+</html>

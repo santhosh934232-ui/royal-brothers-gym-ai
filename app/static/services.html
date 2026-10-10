@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | Royal Brothers Fitness Gym</title>
+    <meta
+      name="description"
+      content="Explore all training programs at Royal Brothers Fitness Gym - Weight Gain, Weight Loss, Strength Training, Cardio, Body Building, Muscle Gain & Body Toning. Belur Main Road, Koottathupatti."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Services Page Stylesheet (new classes only, safe to add) -->
+    <link rel="stylesheet" href="services.css" />
+
+    <!-- Favicon (add a favicon.png to this folder later, then uncomment) -->
+    <!-- <link rel="icon" type="image/png" href="favicon.png" /> -->
+  </head>
+  <body>
+    <!-- ============ PRELOADER ============ -->
+    <div class="preloader" id="preloader">
+      <div class="loader-spinner"></div>
+    </div>
+
+    <!-- ============ HEADER / NAVBAR ============ -->
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="index.html" class="logo">
+          <span class="logo-text"
+            >ROYAL<span class="logo-accent">BROTHERS</span></span
+          >
+          <span class="logo-sub">FITNESS GYM</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="membership.html" class="nav-link">Membership</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-neon">Join Now</a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ============ PAGE BANNER ============ -->
+    <!-- No background image used here on purpose (avoids the blank/black -->
+    <!-- banner issue from the about page) — pure gradient like the hero. -->
+    <section class="page-banner">
+      <div class="container page-banner-content">
+        <span class="section-tag">WHAT WE OFFER</span>
+        <h1 class="page-banner-title">
+          Our <span class="text-neon-blue">Services</span>
+        </h1>
+        <p class="page-banner-desc">
+          Seven focused training programs, one goal: a stronger, fitter you.
+        </p>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span><i class="fa-solid fa-chevron-right"></i></span>
+          <span class="breadcrumb-current">Services</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES DETAIL SECTION ============ -->
+    <section class="services-detail" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">TRAINING PROGRAMS</span>
+          <h2 class="section-title">
+            Programs Built Around
+            <span class="text-neon-purple">Your Goal</span>
+          </h2>
+          <p class="section-desc">
+            Every program is guided by our trainer and adjusted to your pace,
+            body type, and schedule.
+          </p>
+        </div>
+
+        <div class="services-detail-grid">
+          <div class="service-detail-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-weight-scale"></i>
+            </div>
+            <h3>Weight Gain</h3>
+            <p>
+              A structured mix of resistance training and calorie-focused
+              nutrition guidance to help you build healthy, sustainable mass.
+            </p>
+            <ul class="service-includes">
+              <li>
+                <i class="fa-solid fa-check"></i> Progressive overload routine
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> High-calorie diet guidance
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Monthly progress tracking
+              </li>
+            </ul>
+          </div>
+
+          <div class="service-detail-card">
+            <div class="service-icon"><i class="fa-solid fa-fire"></i></div>
+            <h3>Weight Loss</h3>
+            <p>
+              Fat-burning circuits combined with practical nutrition coaching,
+              designed to fit real life, not just the gym.
+            </p>
+            <ul class="service-includes">
+              <li>
+                <i class="fa-solid fa-check"></i> High-intensity fat-burn
+                circuits
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Calorie-deficit meal guidance
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Weekly measurements &
+                check-ins
+              </li>
+            </ul>
+          </div>
+
+          <div class="service-detail-card">
+            <div class="service-icon"><i class="fa-solid fa-dumbbell"></i></div>
+            <h3>Strength Training</h3>
+            <p>
+              Build raw power with progressive resistance programs centered on
+              compound lifts and safe technique.
+            </p>
+            <ul class="service-includes">
+              <li>
+                <i class="fa-solid fa-check"></i> Compound lift programming
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Form correction & spotting
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Strength benchmarks tracked
+              </li>
+            </ul>
+          </div>
+
+          <div class="service-detail-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h3>Cardio Training</h3>
+            <p>
+              Guided sessions that build endurance and cardiovascular health at
+              an intensity matched to your current fitness level.
+            </p>
+            <ul class="service-includes">
+              <li>
+                <i class="fa-solid fa-check"></i> Treadmill & interval sessions
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Heart-rate zone guidance
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Stamina-building progression
+              </li>
+            </ul>
+          </div>
+
+          <div class="service-detail-card">
+            <div class="service-icon"><i class="fa-solid fa-trophy"></i></div>
+            <h3>Body Building</h3>
+            <p>
+              Competition-focused training for serious lifters, with volume and
+              split routines built to maximize muscle growth.
+            </p>
+            <ul class="service-includes">
+              <li>
+                <i class="fa-solid fa-check"></i> Muscle-group split routines
+              </li>
+              <li><i class="fa-solid fa-check"></i> Contest prep guidance</li>
+              <li>
+                <i class="fa-solid fa-check"></i> Posing & physique feedback
+              </li>
+            </ul>
+          </div>
+
+          <div class="service-detail-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-hand-fist"></i>
+            </div>
+            <h3>Muscle Gain</h3>
+            <p>
+              Targeted hypertrophy programming to build lean muscle mass with
+              controlled tempo and volume.
+            </p>
+            <ul class="service-includes">
+              <li>
+                <i class="fa-solid fa-check"></i> Hypertrophy-focused sets &
+                reps
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Protein-focused diet tips
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Recovery & rest planning
+              </li>
+            </ul>
+          </div>
+
+          <div class="service-detail-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-person-walking"></i>
+            </div>
+            <h3>Body Toning</h3>
+            <p>
+              Sculpt and tone with functional training methods that combine
+              light resistance with higher reps for a lean look.
+            </p>
+            <ul class="service-includes">
+              <li>
+                <i class="fa-solid fa-check"></i> Functional & circuit training
+              </li>
+              <li><i class="fa-solid fa-check"></i> Core & posture focus</li>
+              <li>
+                <i class="fa-solid fa-check"></i> Flexibility & mobility work
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS (PROCESS) ============ -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">GETTING STARTED</span>
+          <h2 class="section-title">
+            How Your <span class="text-neon-blue">Program</span> Starts
+          </h2>
+          <p class="section-desc">
+            From your first visit to your first milestone — here's what to
+            expect.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <span class="process-number">01</span>
+            <h3>Fitness Assessment</h3>
+            <p>
+              We check your current fitness level, goals, and any health
+              considerations before you start.
+            </p>
+          </div>
+          <div class="process-step">
+            <span class="process-number">02</span>
+            <h3>Program Design</h3>
+            <p>
+              Your trainer builds a routine around the service that matches your
+              goal — gain, loss, or toning.
+            </p>
+          </div>
+          <div class="process-step">
+            <span class="process-number">03</span>
+            <h3>Guided Training</h3>
+            <p>
+              Train with hands-on form correction and support during Men's or
+              Women's timing slots.
+            </p>
+          </div>
+          <div class="process-step">
+            <span class="process-number">04</span>
+            <h3>Track Progress</h3>
+            <p>
+              Regular check-ins and measurements keep your program adjusted as
+              you improve.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY OUR TRAINING WORKS ============ -->
+    <section class="why-training">
+      <div class="container why-training-grid">
+        <div class="why-training-content">
+          <span class="section-tag">THE ROYAL BROTHERS DIFFERENCE</span>
+          <h2 class="section-title">
+            Every Program Comes With
+            <span class="text-neon-purple">Real Support</span>
+          </h2>
+          <p>
+            Whichever service you choose, you're never left to figure it out
+            alone. Our trainer works directly with you across separate Men's and
+            Women's timing slots, so your program stays focused, safe, and
+            consistent.
+          </p>
+          <ul class="about-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i> One-on-one form
+              correction
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Diet plans matched to
+              your service
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Clean, modern equipment
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Flexible Men's & Women's
+              timings
+            </li>
+          </ul>
+          <a href="membership.html" class="btn btn-neon"
+            >View Membership Plans</a
+          >
+        </div>
+
+        <div class="why-training-stats">
+          <div class="stat-box">
+            <h3 class="counter" data-target="7">0</h3>
+            <p>Training Programs</p>
+          </div>
+          <div class="stat-box">
+            <h3 class="counter" data-target="500">0</h3>
+            <p>Members</p>
+          </div>
+          <div class="stat-box">
+            <h3 class="counter" data-target="4">0</h3>
+            <p>Dedicated Trainer</p>
+          </div>
+          <div class="stat-box">
+            <h3 class="counter" data-target="6">0</h3>
+            <p>Days Open</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CALL TO ACTION ============ -->
+    <section class="cta-section">
+      <div class="container cta-content text-center">
+        <h2>
+          Not Sure Which Program Is
+          <span class="text-neon-blue">Right For You?</span>
+        </h2>
+        <p>
+          Talk to us and we'll help you pick the service that fits your goal.
+        </p>
+        <div class="hero-buttons" style="justify-content: center">
+          <a href="register.html" class="btn btn-neon-lg">Join Now</a>
+          <a href="contact.html" class="btn btn-outline-lg">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-logo">
+            ROYAL<span class="logo-accent">BROTHERS</span>
+          </h3>
+          <p>
+            Royal Brothers Fitness Gym — your ultimate destination for strength,
+            fitness, and transformation.
+          </p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="services.html">Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fa-solid fa-location-dot"></i> Belur Main Road,
+              Koottathupatti
+            </li>
+            <li><i class="fa-solid fa-phone"></i> 63807 78788</li>
+            <li><i class="fa-solid fa-phone"></i> 90805 48638</li>
+            <li>
+              <i class="fa-solid fa-envelope"></i> info@royalbrothersgym.com
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="year"></span> Royal Brothers Fitness Gym. All Rights
+          Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="auth-cache.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

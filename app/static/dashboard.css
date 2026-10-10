@@ -1,0 +1,14 @@
+/* Member AI Dashboard (Step 9): small card grid; reuses profile.css/style.css tokens */
+.dash-title { margin-bottom: 24px; }
+.dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.dash-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.dash-card.wide { grid-column: 1 / -1; }
+.dash-card h2 { font-size: 1.1rem; margin: 0; color: var(--color-neon-blue); }
+.dash-card p { margin: 0; line-height: 1.5; color: var(--color-text-secondary, #b0b8c4); }
+.dash-big { font-size: 1.6rem; font-weight: 700; color: var(--color-text-primary, #fff) !important; }
+.dash-stats { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.dash-stats span { font-size: 0.9rem; }
+.dash-empty { opacity: 0.75; font-style: italic; }
+.dash-card .btn { margin-top: auto; align-self: flex-start; }
+.dash-weights { display: flex; flex-wrap: wrap; gap: 6px; }
+.dash-weights span { font-size: 0.8rem; padding: 3px 8px; border: 1px solid var(--color-border); border-radius: 8px; }

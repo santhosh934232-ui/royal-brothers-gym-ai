@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Royal Brothers Fitness Gym</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="admin-assistant.css" />
+  </head>
+  <body class="admin-body">
+    <!-- Loading / logged-out states -->
+    <p id="adminLoading" class="profile-status">Checking admin session...</p>
+    <div id="adminLoggedOut" class="profile-status" style="display: none">
+      Not logged in as admin.
+      <a href="admin-login.html" class="auth-link">Go to admin login</a>
+    </div>
+
+    <div id="adminDashboard" style="display: none">
+      <!-- ============ TOP BAR ============ -->
+      <header class="admin-topbar">
+        <div class="admin-topbar-logo">
+          <span class="logo-text"
+            >ROYAL<span class="logo-accent">BROTHERS</span></span
+          >
+          <span class="logo-sub">ADMIN DASHBOARD</span>
+        </div>
+        <div class="admin-topbar-actions">
+          <span id="adminUsernameLabel" class="admin-username">-</span>
+          <button id="adminLogoutBtn" class="btn btn-outline">Logout</button>
+        </div>
+      </header>
+
+      <div class="admin-layout">
+        <!-- ============ SIDEBAR TABS ============ -->
+        <nav class="admin-sidebar">
+          <button class="admin-tab-btn active" data-tab="overview">
+            <i class="fa-solid fa-gauge"></i> Overview
+          </button>
+          <button class="admin-tab-btn" data-tab="members">
+            <i class="fa-solid fa-users"></i> Members
+          </button>
+          <button class="admin-tab-btn" data-tab="requests">
+            <i class="fa-solid fa-clipboard-list"></i> Membership Requests
+            <span class="sidebar-badge" id="badgeRequests" style="display: none"
+              >0</span
+            >
+          </button>
+          <button class="admin-tab-btn" data-tab="plans">
+            <i class="fa-solid fa-tags"></i> Membership Plans
+          </button>
+          <button class="admin-tab-btn" data-tab="messages">
+            <i class="fa-solid fa-envelope"></i> Contact Messages
+            <span class="sidebar-badge" id="badgeMessages" style="display: none"
+              >0</span
+            >
+          </button>
+          <button class="admin-tab-btn" data-tab="ai">
+            <i class="fa-solid fa-robot"></i> AI Management
+          </button>
+          <button class="admin-tab-btn" data-tab="assistant" type="button" aria-controls="tab-assistant">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i> Admin Assistant
+          </button>
+          <!-- Phase 3: dedicated, server-gated page (admin session required) -->
+          <a class="admin-tab-btn admin-nav-link" href="/admin/friction-insights">
+            <span><i class="fa-solid fa-route"></i> Journey Friction Insights</span>
+          </a>
+        </nav>
+
+        <!-- ============ MAIN CONTENT ============ -->
+        <main class="admin-content">
+          <!-- ---------- OVERVIEW ---------- -->
+          <section class="admin-tab-panel active" id="tab-overview">
+            <h2 class="admin-section-title">Overview</h2>
+            <div class="admin-stats-grid" id="statsGrid">
+              <p class="profile-status">Loading stats...</p>
+            </div>
+          </section>
+
+          <!-- ---------- MEMBERS ---------- -->
+          <section class="admin-tab-panel" id="tab-members">
+            <h2 class="admin-section-title">Members</h2>
+            <div class="admin-search-bar">
+              <input
+                type="text"
+                id="memberSearchInput"
+                class="admin-search-input"
+                placeholder="Search by name, email, or plan..."
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table" id="membersTable">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Joined</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="4">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ---------- MEMBERSHIP REQUESTS ---------- -->
+          <section class="admin-tab-panel" id="tab-requests">
+            <h2 class="admin-section-title">Membership Requests</h2>
+            <div class="admin-table-wrap">
+              <table class="admin-table" id="requestsTable">
+                <thead>
+                  <tr>
+                    <th>Member</th>
+                    <th>Plan</th>
+                    <th>Price</th>
+                    <th>Requested</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="6">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ---------- MEMBERSHIP PLANS ---------- -->
+          <section class="admin-tab-panel" id="tab-plans">
+            <h2 class="admin-section-title">Membership Plans</h2>
+
+            <form id="addPlanForm" class="admin-inline-form">
+              <input
+                type="text"
+                id="newPlanName"
+                placeholder="Plan name (e.g. 1 Month)"
+                required
+              />
+              <input
+                type="number"
+                id="newPlanDuration"
+                placeholder="Duration (months)"
+                min="1"
+                required
+              />
+              <input
+                type="number"
+                id="newPlanPrice"
+                placeholder="Price (₹)"
+                min="0"
+                step="0.01"
+                required
+              />
+              <input
+                type="text"
+                id="newPlanFeatures"
+                placeholder="Features (comma separated)"
+              />
+              <button type="submit" class="btn btn-neon">Add Plan</button>
+            </form>
+
+            <div class="admin-search-bar">
+              <input
+                type="text"
+                id="planSearchInput"
+                class="admin-search-input"
+                placeholder="Search by plan name, duration, or price..."
+              />
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table" id="plansTable">
+                <thead>
+                  <tr>
+                    <th>Plan</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                    <th>Features</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="5">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ---------- CONTACT MESSAGES ---------- -->
+          <section class="admin-tab-panel" id="tab-messages">
+            <h2 class="admin-section-title">Contact Messages</h2>
+            <div class="admin-table-wrap">
+              <table class="admin-table" id="messagesTable">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="5">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ---------- AI MANAGEMENT (Step 10, read-only) ---------- -->
+          <section class="admin-tab-panel" id="tab-ai">
+            <h2 class="admin-section-title">AI Management</h2>
+            <div class="admin-stats-grid" id="aiStatusGrid">
+              <p class="profile-status">Loading AI status...</p>
+            </div>
+            <p id="aiStatusMessage" class="profile-status" style="padding: 12px 0"></p>
+            <div class="admin-table-wrap">
+              <table class="admin-table" id="aiFeaturesTable">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Step</th>
+                    <th>Saved records</th>
+                    <th>Latest generation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="4">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="plan-disclaimer" style="margin-top: 14px; font-size: 0.8rem; opacity: 0.7">
+              Read-only overview. Counts and timestamps only: member profiles,
+              progress and AI-generated content are not shown or editable here,
+              and the API key is never displayed.
+            </p>
+            <button type="button" class="btn btn-outline" id="aiRefreshBtn">
+              <i class="fa-solid fa-rotate"></i> Refresh
+            </button>
+          </section>
+
+          <!-- ---------- ADMIN ASSISTANT (Phase 4D, session-gated with dashboard) ---------- -->
+          <section class="admin-tab-panel" id="tab-assistant" role="region" aria-labelledby="assistantTitle">
+            <div class="assistant-heading">
+              <div>
+                <p class="assistant-eyebrow">READ-ONLY • APPROVED AGGREGATES</p>
+                <h2 class="admin-section-title" id="assistantTitle">Admin AI Assistant</h2>
+                <p class="assistant-intro">
+                  Ask about available, approved gym data such as account and membership-request counts.
+                  Answers are limited to that data and may say when there is not enough information.
+                </p>
+              </div>
+              <span class="assistant-scope-chip"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Admin only</span>
+            </div>
+
+            <div id="assistantConversation" class="assistant-conversation" role="log" aria-label="Assistant conversation" aria-live="polite" aria-relevant="additions text">
+              <article class="assistant-message assistant-message-system">
+                <p class="assistant-message-label">Assistant</p>
+                <p class="assistant-message-text">Hello. Ask a question about the approved aggregate data available to this assistant. Do not include personal or sensitive information.</p>
+              </article>
+            </div>
+
+            <form id="adminAssistantForm" class="assistant-composer" novalidate>
+              <label class="assistant-input-label" for="assistantQuestion">Your question</label>
+              <textarea
+                id="assistantQuestion"
+                name="question"
+                rows="3"
+                maxlength="1200"
+                placeholder="For example: How many verified accounts are there?"
+                aria-describedby="assistantQuestionHint assistantValidationError assistantCharacterCount"
+                required
+              ></textarea>
+              <div class="assistant-input-meta">
+                <span id="assistantQuestionHint">Maximum 1,200 characters. Answers use approved aggregate data only.</span>
+                <span id="assistantCharacterCount" aria-live="off">0 / 1,200</span>
+              </div>
+              <p id="assistantValidationError" class="assistant-validation-error" role="alert" hidden></p>
+              <div class="assistant-composer-actions">
+                <p id="assistantLoading" class="assistant-loading" role="status" aria-live="polite" hidden>
+                  <span class="assistant-spinner" aria-hidden="true"></span> Sending your question…
+                </p>
+                <button id="assistantSendButton" class="btn btn-neon assistant-send-button" type="submit">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send
+                </button>
+              </div>
+            </form>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- ============ DELETE CONFIRMATION MODAL (secure delete workflow) ============ -->
+    <!-- Reused for Membership Plans, Membership Requests, and any future
+         delete action -- openDeleteConfirmModal(type, id) in admin.js
+         drives which record it targets. -->
+    <div class="modal-backdrop" id="deleteConfirmModal">
+      <div class="modal-overlay"></div>
+      <div
+        class="modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="deleteConfirmTitle"
+      >
+        <div class="modal-icon-wrap">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h3 class="modal-title" id="deleteConfirmTitle">
+          Admin Authentication Required
+        </h3>
+        <p class="modal-message">
+          You are about to permanently delete this record.<br />
+          This action cannot be undone.<br />
+          Please enter your admin password to continue.
+        </p>
+
+        <div class="modal-password-wrap">
+          <input
+            type="password"
+            id="deleteConfirmPassword"
+            class="modal-password-input"
+            placeholder="Enter admin password"
+            autocomplete="off"
+          />
+          <button
+            type="button"
+            class="toggle-password"
+            id="toggleDeleteConfirmPassword"
+          >
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+
+        <div class="modal-actions">
+          <button
+            type="button"
+            class="btn btn-outline"
+            id="deleteConfirmCancelBtn"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            id="deleteConfirmBtn"
+            disabled
+          >
+            Confirm Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+    <script src="admin-assistant.js"></script>
+  </body>
+</html>

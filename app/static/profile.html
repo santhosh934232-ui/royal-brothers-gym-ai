@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile | Royal Brothers Fitness Gym</title>
+    <meta
+      name="description"
+      content="View and manage your Royal Brothers Fitness Gym profile and membership."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="profile.css" />
+  </head>
+  <body>
+    <!-- ============ HEADER / NAVBAR ============ -->
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="index.html" class="logo">
+          <span class="logo-text"
+            >ROYAL<span class="logo-accent">BROTHERS</span></span
+          >
+          <span class="logo-sub">FITNESS GYM</span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="membership.html" class="nav-link">Membership</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="profile.html" class="nav-link active">Profile</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="logoutBtn" class="btn btn-outline">Logout</button>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ============ PROFILE CONTENT ============ -->
+    <main class="profile-page">
+      <div class="container">
+        <p id="profileLoading" class="profile-status">
+          Loading your profile...
+        </p>
+        <div id="profileLoggedOut" class="profile-status" style="display: none">
+          You're not logged in.
+          <a href="login.html" class="auth-link">Log in</a> to view your
+          profile.
+        </div>
+
+        <div id="profileContent" style="display: none">
+          <!-- ---------- EXPIRY WARNING BANNER ---------- -->
+          <div id="expiryWarning" class="expiry-warning" style="display: none">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span id="expiryWarningText"></span>
+          </div>
+
+          <p style="margin-bottom: 20px">
+            <a href="dashboard.html" class="btn btn-outline"
+              ><i class="fa-solid fa-gauge-high"></i> Open My AI Dashboard</a
+            >
+          </p>
+
+          <div class="profile-dashboard-grid">
+            <!-- ---------- LEFT: PROFILE HEADER CARD ---------- -->
+            <section class="profile-header-card">
+              <div class="profile-avatar-wrap">
+                <div class="profile-avatar" id="profileAvatar">
+                  <img
+                    src="/royalbrothersgym.jpg"
+                    alt="Royal Brothers Fitness Gym"
+                  />
+                </div>
+              </div>
+
+              <!-- View mode -->
+              <div id="profileViewMode">
+                <h1 id="profileName" class="profile-name">-</h1>
+                <p id="profileEmail" class="profile-email">-</p>
+                <span id="profileGender" class="profile-badge">-</span>
+                <button
+                  type="button"
+                  class="btn btn-outline profile-edit-toggle"
+                  id="editProfileBtn"
+                >
+                  <i class="fa-solid fa-pen"></i> Edit Profile
+                </button>
+              </div>
+
+              <!-- Edit mode (hidden by default) -->
+              <form
+                id="editProfileForm"
+                class="profile-edit-form"
+                style="display: none"
+              >
+                <div class="form-group">
+                  <label for="editFullName">Full Name</label>
+                  <input type="text" id="editFullName" required />
+                </div>
+                <div class="form-group">
+                  <label for="editGender">Gender</label>
+                  <select id="editGender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <p id="editProfileError" class="form-error" role="alert"></p>
+                <div class="profile-edit-actions">
+                  <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelEditBtn"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn btn-neon"
+                    id="saveProfileBtn"
+                  >
+                    Save Changes
+                  </button>
+                </div>
+              </form>
+            </section>
+
+            <!-- ---------- RIGHT: MEMBERSHIP CARD ---------- -->
+            <section class="membership-card-section">
+              <h2 class="section-title-sm">Membership</h2>
+              <div id="membershipCardWrap">
+                <p class="profile-status">Loading membership info...</p>
+              </div>
+            </section>
+          </div>
+
+          <!-- ---------- MEMBERSHIP REMINDER PREFERENCES (Phase 8) ---------- -->
+          <section
+            class="membership-card-section fitness-section reminder-preferences"
+            id="membershipReminderSection"
+            aria-labelledby="membershipReminderTitle"
+          >
+            <h2 class="section-title-sm" id="membershipReminderTitle">
+              Membership Expiry Reminders
+            </h2>
+            <p class="reminder-description">
+              Choose whether to receive email reminders before your membership expiry date.
+              Reminders are optional and can be changed at any time.
+            </p>
+            <p id="reminderPreferencesStatus" class="reminder-status" role="status" aria-live="polite">
+              Loading your saved reminder preferences...
+            </p>
+            <form id="reminderPreferencesForm" novalidate>
+              <label class="reminder-enable-option" for="reminderEnabled">
+                <input type="checkbox" id="reminderEnabled" disabled />
+                <span>Enable membership expiry email reminders</span>
+              </label>
+              <fieldset id="reminderLeadTimeGroup" class="reminder-lead-group" disabled>
+                <legend>Choose when to be reminded</legend>
+                <div id="reminderLeadTimeOptions" class="reminder-lead-options"></div>
+              </fieldset>
+              <p class="reminder-help">
+                No reminders are sent unless you opt in. Available timing choices are controlled by the gym.
+              </p>
+              <button type="submit" class="btn btn-neon" id="saveReminderPreferencesBtn" disabled>
+                Save Reminder Preferences
+              </button>
+            </form>
+          </section>
+
+          <!-- ---------- FITNESS PROFILE (Step 2) ---------- -->
+          <section class="membership-card-section fitness-section">
+            <h2 class="section-title-sm">Fitness Profile</h2>
+            <div id="fitnessView">
+              <p id="fitnessEmpty" class="profile-status">
+                You haven't set up your fitness profile yet.
+              </p>
+              <div id="fitnessSummary" class="membership-card" style="display: none"></div>
+              <button type="button" class="btn btn-outline profile-edit-toggle" id="editFitnessBtn">
+                <i class="fa-solid fa-pen"></i> <span id="editFitnessBtnText">Set Up Fitness Profile</span>
+              </button>
+            </div>
+            <form id="fitnessForm" class="profile-edit-form" style="display: none" novalidate>
+              <div class="form-group">
+                <label for="fitGoal">Fitness Goal</label>
+                <select id="fitGoal" required>
+                  <option value="">Select goal</option>
+                  <option value="weight_loss">Weight Loss</option>
+                  <option value="muscle_gain">Muscle Gain</option>
+                  <option value="strength">Strength</option>
+                  <option value="endurance">Endurance</option>
+                  <option value="general_fitness">General Fitness</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fitHeight">Height (cm)</label>
+                <input type="number" id="fitHeight" min="100" max="250" step="0.1" required />
+              </div>
+              <div class="form-group">
+                <label for="fitWeight">Weight (kg)</label>
+                <input type="number" id="fitWeight" min="30" max="300" step="0.1" required />
+              </div>
+              <div class="form-group">
+                <label for="fitExperience">Workout Experience</label>
+                <select id="fitExperience" required>
+                  <option value="">Select level</option>
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fitMinutes">Available Workout Time (minutes per session)</label>
+                <input type="number" id="fitMinutes" min="15" max="240" step="1" required />
+              </div>
+              <div class="form-group">
+                <label for="fitTiming">College/Work Timing (optional)</label>
+                <input type="text" id="fitTiming" maxlength="100" placeholder="e.g. 9 AM - 4 PM" />
+              </div>
+              <p id="fitnessError" class="form-error" role="alert"></p>
+              <div class="profile-edit-actions">
+                <button type="button" class="btn btn-outline" id="cancelFitnessBtn">Cancel</button>
+                <button type="submit" class="btn btn-neon" id="saveFitnessBtn">Save</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- ---------- AI WORKOUT PLAN (Step 3) ---------- -->
+          <section class="membership-card-section fitness-section" id="workoutPlanSection">
+            <h2 class="section-title-sm">AI Workout Plan</h2>
+            <p id="planStatus" class="profile-status">Loading your plan...</p>
+            <div id="planOutput" style="display: none"></div>
+            <p id="planError" class="form-error" role="alert"></p>
+            <button type="button" class="btn btn-neon" id="generatePlanBtn">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span id="generatePlanBtnText">Generate My Plan</span>
+            </button>
+            <p class="plan-disclaimer">
+              AI-generated guidance based on your Fitness Profile. Consult a
+              doctor or trainer before starting, and stop if anything hurts.
+            </p>
+          </section>
+
+          <!-- ---------- AI DAILY PLANNER (Step 4) ---------- -->
+          <section class="membership-card-section fitness-section" id="dailyPlanSection">
+            <h2 class="section-title-sm">AI Daily Planner</h2>
+            <p id="dailyStatus" class="profile-status">Loading your daily plan...</p>
+            <div id="dailyOutput" style="display: none"></div>
+            <p id="dailyError" class="form-error" role="alert"></p>
+            <div class="form-group">
+              <label for="dailyDay">Plan a day</label>
+              <select id="dailyDay">
+                <option value="">Today (automatic)</option>
+                <option value="1">Day 1</option>
+                <option value="2">Day 2</option>
+                <option value="3">Day 3</option>
+                <option value="4">Day 4</option>
+                <option value="5">Day 5</option>
+                <option value="6">Day 6</option>
+                <option value="7">Day 7</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-neon" id="generateDailyBtn">
+              <i class="fa-solid fa-calendar-day"></i>
+              <span id="generateDailyBtnText">Generate Daily Plan</span>
+            </button>
+            <p class="plan-disclaimer">
+              Built from your Fitness Profile and AI Workout Plan. Needs a
+              workout plan first.
+            </p>
+          </section>
+
+          <!-- ---------- FITNESS PROGRESS (Step 5) ---------- -->
+          <section class="membership-card-section fitness-section" id="progressSection">
+            <h2 class="section-title-sm">Fitness Progress</h2>
+            <p id="progressStatus" class="profile-status">Loading your progress...</p>
+            <div id="progressSummary" class="membership-card" style="display: none"></div>
+            <div id="progressChartWrap" class="progress-chart-wrap" style="display: none"></div>
+            <ul id="progressList" class="plan-exercises progress-list"></ul>
+
+            <form id="progressForm" class="profile-edit-form" novalidate>
+              <h3 class="plan-tips-title" id="progressFormTitle">Add Progress Entry</h3>
+              <div class="form-group">
+                <label for="progDate">Date</label>
+                <input type="date" id="progDate" required />
+              </div>
+              <div class="form-group">
+                <label for="progWeight">Weight (kg)</label>
+                <input type="number" id="progWeight" min="30" max="300" step="0.1" required />
+              </div>
+              <div class="form-group">
+                <label for="progNotes">Notes (optional)</label>
+                <input type="text" id="progNotes" maxlength="300" placeholder="e.g. Felt strong, increased squat weight" />
+              </div>
+              <p id="progressError" class="form-error" role="alert"></p>
+              <div class="profile-edit-actions">
+                <button type="button" class="btn btn-outline" id="cancelProgressBtn" style="display: none">Cancel</button>
+                <button type="submit" class="btn btn-neon" id="saveProgressBtn">Add Entry</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- ---------- AI FITNESS INSIGHTS (Step 6) ---------- -->
+          <section class="membership-card-section fitness-section" id="insightsSection">
+            <h2 class="section-title-sm">AI Fitness Insights</h2>
+            <p id="insightStatus" class="profile-status">Loading your insights...</p>
+            <div id="insightOutput" style="display: none"></div>
+            <p id="insightError" class="form-error" role="alert"></p>
+            <button type="button" class="btn btn-neon" id="generateInsightBtn">
+              <i class="fa-solid fa-lightbulb"></i>
+              <span id="generateInsightBtnText">Generate My Insights</span>
+            </button>
+            <p class="plan-disclaimer">
+              AI-generated guidance based on your Fitness Profile, workout plan and
+              progress. It never changes your data. Not medical advice; consult a
+              doctor or trainer if unsure.
+            </p>
+          </section>
+
+          <!-- ---------- SMART WORKOUT RECOMMENDATIONS (Step 7) ---------- -->
+          <section class="membership-card-section fitness-section" id="recommendSection">
+            <h2 class="section-title-sm">Smart Workout Recommendations</h2>
+            <p id="recommendStatus" class="profile-status">Loading your recommendations...</p>
+            <div id="recommendOutput" style="display: none"></div>
+            <p id="recommendError" class="form-error" role="alert"></p>
+            <button type="button" class="btn btn-neon" id="generateRecommendBtn">
+              <i class="fa-solid fa-dumbbell"></i>
+              <span id="generateRecommendBtnText">Get Recommendations</span>
+            </button>
+            <p class="plan-disclaimer">
+              Suggestions only. They never change your saved workout plan or
+              progress. Not medical advice; consult a doctor or trainer if
+              unsure.
+            </p>
+          </section>
+
+          <!-- ---------- AI NUTRITION PLANNER (Step 8) ---------- -->
+          <section class="membership-card-section fitness-section" id="nutritionSection">
+            <h2 class="section-title-sm">AI Nutrition Planner</h2>
+            <p id="nutritionStatus" class="profile-status">Loading your nutrition plan...</p>
+            <div id="nutritionOutput" style="display: none"></div>
+            <p id="nutritionError" class="form-error" role="alert"></p>
+            <button type="button" class="btn btn-neon" id="generateNutritionBtn">
+              <i class="fa-solid fa-apple-whole"></i>
+              <span id="generateNutritionBtnText">Generate Nutrition Plan</span>
+            </button>
+            <p class="plan-disclaimer">
+              General fitness and nutrition guidance only. It never changes your
+              profile, workout plan or progress. Not medical advice; consult a
+              doctor or dietitian if you have a health condition, allergy or
+              dietary restriction.
+            </p>
+          </section>
+
+          <!-- ---------- BOTTOM LOGOUT SECTION ---------- -->
+          <div class="profile-logout-section">
+            <button
+              type="button"
+              class="btn btn-logout-danger"
+              id="logoutBtnProfile"
+            >
+              <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="auth-cache.js"></script>
+    <script src="script.js"></script>
+    <script src="membership-reminders.js"></script>
+    <script src="profile.js"></script>
+  </body>
+</html>

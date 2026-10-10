@@ -1,0 +1,62 @@
+/* ============================================
+   ROYAL BROTHERS FITNESS GYM - REGISTER PAGE
+   Extra styles on top of login.css (shared auth layout)
+   ============================================ */
+
+/* ---------- SELECT DROPDOWNS ---------- */
+.input-wrapper select {
+  width: 100%;
+  padding: 14px 18px 14px 46px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  appearance: none;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.input-wrapper select:focus {
+  outline: none;
+  border-color: var(--color-neon-blue);
+  box-shadow: 0 0 0 3px var(--color-neon-blue-glow);
+}
+
+.input-wrapper select.input-error {
+  border-color: #ff5c7a;
+}
+
+.input-wrapper select option {
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+}
+
+/* Custom dropdown arrow for select fields */
+.select-wrapper::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  position: absolute;
+  right: 16px;
+  pointer-events: none;
+}
+
+/* ---------- TERMS & CONDITIONS CHECKBOX ---------- */
+.terms-checkbox {
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
+.terms-checkbox .checkbox-custom {
+  margin-top: 2px;
+}
+
+.terms-checkbox .auth-link {
+  margin-left: 4px;
+}

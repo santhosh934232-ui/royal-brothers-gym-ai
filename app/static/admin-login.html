@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login | Royal Brothers Fitness Gym</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body class="admin-login-body">
+    <div class="admin-login-card">
+      <div class="admin-login-logo">
+        <span class="logo-text">ROYAL<span class="logo-accent">BROTHERS</span></span>
+        <span class="logo-sub">ADMIN ACCESS</span>
+      </div>
+
+      <h1 class="admin-login-title">Admin Login</h1>
+      <p class="admin-login-desc">Restricted access. Staff only.</p>
+
+      <form id="adminLoginForm" class="admin-login-form" novalidate>
+        <div class="form-group">
+          <label for="adminUsername">Username</label>
+          <input type="text" id="adminUsername" name="username" required autocomplete="username" />
+        </div>
+
+        <div class="form-group">
+          <label for="adminPassword">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="adminPassword" name="password" required autocomplete="current-password" />
+            <button type="button" class="toggle-password" id="toggleAdminPassword" data-target="adminPassword" aria-label="Show password">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <p id="formError" class="form-error" role="alert"></p>
+
+        <button type="submit" class="btn btn-neon admin-login-submit">Login</button>
+      </form>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
